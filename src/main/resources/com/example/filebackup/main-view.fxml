@@ -5,12 +5,17 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:id="rootLayout"
       fx:controller="com.example.filebackup.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Button text="Encrypt" onAction="#onEncryptButtonClick"/>
+    <Button text="Decrypt" onAction="#onDecryptButtonClick"/>
+    <Button text="Zip" onAction="#onZipButtonClick"/>
+    <Button text="Unzip" onAction="#onUnzipButtonClick"/>
+    <Button text="Copy" onAction="#onCopyButtonClick"/>
+    <Button text="Upload" onAction="#onUploadButtonClick"/>
 </VBox>

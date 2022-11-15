@@ -1,4 +1,4 @@
-package huffman;
+package com.example.filebackup.utils.huffman;
 
 public class Node implements Comparable<Node>{
 

@@ -5,17 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/AESUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/AESUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncrypyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncrypyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UnZipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UnZipUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/HuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/HuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test_encrpy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test_encrpy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/pathselect-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/pathselect-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HZbOO8lJSrdbWonVc1t3DPm6dx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,9 +57,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "D:/temp/file-backup/src/main/java/com/example/filebackup",
+    "last_opened_file_path": "D:/temp/file-backup/src/main/java/com/example/filebackup/utils"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\temp\file-backup\src\main\java\com\example\filebackup\utils" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.filebackup.ui" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.filebackup.MainApplication" />
+      <module name="file-backup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

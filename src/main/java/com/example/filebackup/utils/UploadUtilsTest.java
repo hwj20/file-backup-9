@@ -1,10 +1,11 @@
+package com.example.filebackup.utils;
+
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class UploadUtilsTest {
     private static final String TAG = "UploadUtilsTest";

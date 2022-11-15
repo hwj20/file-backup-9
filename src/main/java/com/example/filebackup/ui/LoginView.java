@@ -1,2 +1,4 @@
-package com.example.filebackup.ui;public class LoginView {
+package com.example.filebackup.ui;
+
+public class LoginView {
 }

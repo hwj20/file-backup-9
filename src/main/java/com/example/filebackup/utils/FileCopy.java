@@ -1,4 +1,6 @@
-import huffman.HuffmanCode;
+package com.example.filebackup.utils;
+
+import com.example.filebackup.utils.huffman.HuffmanCode;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
