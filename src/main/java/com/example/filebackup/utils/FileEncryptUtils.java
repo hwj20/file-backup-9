@@ -12,9 +12,9 @@ import java.nio.file.Path;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class FileEncrypyUtils {
+public class FileEncryptUtils {
 //    在复制目录的过程中判断源文件下所有文件对象是否为目录，是的话则利用递归调用自己复制目录
-//    如果是文件的话，则调用encrypy方法加密文件,加密是根据用户输入的数字，在每个字节上加上这个数字，实现加密
+//    如果是文件的话，则调用encrypt方法加密文件,加密是根据用户输入的数字，在每个字节上加上这个数字，实现加密
 
     public static void search(String srcPath,String destPath,String key) throws Exception {
         File src = new File(srcPath);//源头
@@ -37,7 +37,7 @@ public class FileEncrypyUtils {
                     //递归调用遍历该目录
                     search(srcPath + File.separator + aSrcList.getName(), destPath + File.separator + aSrcList.getName(),key);
                 } else if (aSrcList.isFile()) {
-                    encrypy(srcPath + File.separator + aSrcList.getName(), destPath + File.separator + aSrcList.getName(),key);
+                    encrypt(srcPath + File.separator + aSrcList.getName(), destPath + File.separator + aSrcList.getName(),key);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class FileEncrypyUtils {
 
 
     //    实现对文件的复制
-    public static void encrypy(String isFile, String osFile, String key) throws Exception {
+    public static void encrypt(String isFile, String osFile, String key) throws Exception {
         File srcfile=new File(isFile);
         Path path=srcfile.toPath();
         String s= Files.readString(path);
@@ -55,7 +55,7 @@ public class FileEncrypyUtils {
 
     }
 
-    public static void decrypy(String isFile, String osFile, String key) throws IOException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
+    public static void decrypt(String isFile, String osFile, String key) throws IOException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         File srcfile=new File(isFile);
         Path path=srcfile.toPath();
         String s= Files.readString(path);

@@ -1,5 +1,6 @@
-package com.example.filebackup.utils;
+package com.test.filebackup;
 
+import com.example.filebackup.utils.UploadUtils;
 import org.testng.annotations.Test;
 
 import java.io.File;

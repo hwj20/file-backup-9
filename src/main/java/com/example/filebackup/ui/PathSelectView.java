@@ -1,15 +1,13 @@
 package com.example.filebackup.ui;
 
 import com.example.filebackup.MainController;
-import com.example.filebackup.utils.FileCopy;
+import com.example.filebackup.utils.*;
+import com.example.filebackup.utils.huffman.HuffmanCode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -24,7 +22,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 /*
-TODO: 目录和文件混合打包，覆盖文件，返回窗口，网络
+TODO: 目录和文件混合打包，覆盖文件，网络
 TODO: 丑
  */
 public class PathSelectView {
@@ -38,7 +36,7 @@ public class PathSelectView {
     public Button action;
     MainController.Mode mode;
     private boolean chooseSrcPath;
-//    private boolean chooseDstPath;
+    private boolean chooseDstPath;
 
     public File onPathSelect() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -64,11 +62,19 @@ public class PathSelectView {
     public void initData(MainController.Mode m){
         mode = m;
         chooseSrcPath = false;
+        chooseDstPath = true;
         dstPathSelect.setText("目标目录选择");
         srcPathSelect.setText("源文件选择");
         if (mode == MainController.Mode.ZIP) {
+//        if (mode == MainController.Mode.ZIP || mode == MainController.Mode.STORE_RESTORE) {
             chooseSrcPath = true;
             srcPathSelect.setText("源目录选择");
+        }
+        if(mode == MainController.Mode.VERIFY || mode == MainController.Mode.RESTORE){
+//            if(mode == MainController.Mode.VERIFY){
+            chooseDstPath = false;
+            dstPathSelect.setText("目标文件选择");
+
         }
         modeLabel.setText(mode.name());
     }
@@ -87,45 +93,148 @@ public class PathSelectView {
     }
     @FXML
     protected void onDstPathSelect() throws IOException {
-        File file =onPathSelect();
+        File file = null;
+        if(chooseDstPath){
+            file = onPathSelect();
+        }
+        else {
+            file = onFileSelect();
+        }
         String dstPath = file.getAbsolutePath();
         dstTextField.setText(dstPath);
     }
 
-    void showReturnDialog(String str){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    void showMessageDialog(String str, Alert.AlertType alertType){
+        Alert alert = new Alert(alertType);
         alert.setTitle("Information Dialog");
-        alert.setHeaderText("喵");
+        alert.setHeaderText(null);
         alert.setContentText(str);
         alert.show();
+    }
+
+    String showInputDialog(String str){
+        TextInputDialog td = new TextInputDialog();
+        td.setHeaderText(str);
+        td.showAndWait();
+        return td.getEditor().getText().toString();
+    }
+    void copyAction(Path srcFile, Path dstPath){
+        File file= new File(srcFile.toString().replace('\\','/'));
+        try {
+            if(mode == MainController.Mode.STORE) {
+                FileCopyUtils.copy(file.toString(), dstPath.toString().replace('\\', '/') + "/"+file.getName());
+            }
+            else{
+                FileCopyUtils.copy(file.toString(), dstPath.toString().replace('\\', '/') );
+            }
+        }catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("copy finished", Alert.AlertType.INFORMATION);
+    }
+    void decryptAction(Path srcFile, Path dstPath){
+        File file= new File(srcFile.toString().replace('\\','/'));
+        String key = showInputDialog("Enter the key");
+        try {
+            FileEncryptUtils.decrypt(file.toString(), dstPath.toString().replace('\\', '/') + '/' + file.getName().replace(".erp",""), key);
+        } catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("decrypt finished", Alert.AlertType.INFORMATION);
+    }
+    void encryptAction(Path srcFile, Path dstPath){
+        File file= new File(srcFile.toString().replace('\\','/'));
+        String key = showInputDialog("Enter the key");
+        try {
+            FileEncryptUtils.encrypt(file.toString(), dstPath.toString().replace('\\', '/') + '/' + file.getName()+".erp", key);
+        } catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("encrypt finished", Alert.AlertType.INFORMATION);
+    }
+    void unzipAction(Path srcFile, Path dstPath){
+        File file = srcFile.toFile();
+        String filename=file.getName();
+        if(!filename.substring(filename.lastIndexOf(".") + 1).equals("zip")){
+            showMessageDialog("source type is not .zip file", Alert.AlertType.ERROR);
+        }
+        else {
+            String fileName = file.getName();
+            String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+            if(suffix.equals("zip")){
+                try {
+                    UnZipUtil.unzip(file.toString(), dstPath.toString().replace('\\', '/'));
+                }catch (Exception exception){
+                    showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+                    return;
+                }
+            }
+            showMessageDialog("unzip finished", Alert.AlertType.INFORMATION);
+        }
+    }
+    void zipAction(Path srcPath, Path dstPath){
+        File file= new File(srcPath.toString().replace('\\','/'));
+        try {
+            FileZipUtil.compressFile(file.toString(),dstPath.toString().replace('\\','/')+'/'+file.getName()+".zip");
+        }catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("zip finished", Alert.AlertType.INFORMATION);
     }
 
     @FXML
     protected void onAction() throws IOException {
         // check file available
         if (srcTextField.getText() == null || Objects.equals(srcTextField.getText(), "")){
-            showReturnDialog("source path is null");
+            showMessageDialog("source path is null", Alert.AlertType.ERROR);
+            return;
         }
         if (dstTextField.getText() == null|| Objects.equals(dstTextField.getText(), "")){
-            showReturnDialog("destination path is null");
+            showMessageDialog("destination path is null", Alert.AlertType.ERROR);
+            return;
         }
         Path srcPath = Paths.get(srcTextField.getText());
         Path dstPath = Paths.get(dstTextField.getText());
         if(chooseSrcPath){
             if(!Files.isDirectory(srcPath)){
-                showReturnDialog("could not load source path");
+                showMessageDialog("could not load source path", Alert.AlertType.ERROR);
+                return;
             }
         }
         else{
             if(!Files.isRegularFile(srcPath)){
-                showReturnDialog("could not load source path");
+                showMessageDialog("could not load source path", Alert.AlertType.ERROR);
+                return;
             }
         }
-        if (!Files.isDirectory(dstPath)){
-            showReturnDialog("could not load destination path");
+        if(chooseDstPath){
+            if(!Files.isDirectory(dstPath)){
+                showMessageDialog("could not load destination path", Alert.AlertType.ERROR);
+                return;
+            }
+        }
+        else{
+            if(!Files.isRegularFile(dstPath)){
+                showMessageDialog("could not load destination path", Alert.AlertType.ERROR);
+                return;
+            }
         }
 
+        switch (mode){
+            case ZIP -> {zipAction(srcPath,dstPath);}
+            case UNZIP -> {unzipAction(srcPath,dstPath);}
+            case STORE,RESTORE-> {copyAction(srcPath,dstPath);}
+            case ENCRYPT -> {encryptAction(srcPath,dstPath);}
+            case DECRYPT -> {decryptAction(srcPath,dstPath);}
+            case UPLOAD -> {}
+        }
     }
+
 
 
 }

@@ -1,25 +1,20 @@
 package com.example.filebackup;
 
 import com.example.filebackup.ui.PathSelectView;
-import com.example.filebackup.utils.FileCopy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 
 
 public class MainController {
     public enum Mode{
-        ENCRYPT,DECRYPT,COPY,ZIP,UNZIP,UPLOAD
+        ENCRYPT,DECRYPT,STORE,RESTORE,ZIP,UNZIP,UPLOAD,VERIFY
     }
     @FXML
     private Label welcomeText;
@@ -34,7 +29,7 @@ public class MainController {
         pathSelectView.initData(mode);
 
 		Stage stage = new Stage();
-		Scene scene = new Scene(root, 320, 320);
+		Scene scene = new Scene(root, 320, 400);
 		stage.setTitle("路径选择");
 		stage.setScene(scene);
 		stage.show();
@@ -65,7 +60,11 @@ public class MainController {
         openPathSelectView(Mode.UNZIP);
     }
     @FXML
-    protected void onCopyButtonClick() throws IOException {
-        openPathSelectView(Mode.COPY);
+    protected void onRestoreButtonClick() throws IOException {
+        openPathSelectView(Mode.RESTORE);
+    }
+    @FXML
+    protected void onStoreButtonClick() throws IOException {
+        openPathSelectView(Mode.STORE);
     }
 }

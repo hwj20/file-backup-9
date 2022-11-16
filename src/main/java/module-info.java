@@ -5,6 +5,7 @@ module com.example.filebackup {
     requires com.almasb.fxgl.all;
     requires java.logging;
     requires org.testng;
+    requires junit;
 
     opens com.example.filebackup to javafx.fxml;
     exports com.example.filebackup;

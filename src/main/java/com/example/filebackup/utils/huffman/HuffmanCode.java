@@ -116,7 +116,7 @@ public class HuffmanCode {
      * @param huffmanBytes
      * @return
      */
-    private static byte[] decode(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
+    public static byte[] decode(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
         StringBuilder stringBuilder = new StringBuilder();
 
         for(int i = 0; i < huffmanBytes.length; ++i) {

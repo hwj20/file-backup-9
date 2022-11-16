@@ -5,6 +5,23 @@ import java.io.*;
 public class FileCopyUtils {
 //    在复制目录的过程中判断源文件下所有文件对象是否为目录，是的话则利用递归调用自己复制目录
 //    如果是文件的话，则调用copyFile方法复制文件
+    public static void copy(String srcPath, String dstPath) throws IOException {
+        try {
+            File file=new File(srcPath);
+            if(file.isDirectory()){
+                FileCopyUtils.copyDir(srcPath,dstPath);
+            }
+            else {
+                File f=new File(dstPath);
+                if(!f.exists()){
+                    f.createNewFile();
+                }
+                FileCopyUtils.copyFile(srcPath,dstPath);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public static void copyDir(String srcPath,String destPath) throws IOException {
         File src = new File(srcPath);//源头
@@ -49,7 +66,6 @@ public class FileCopyUtils {
                 os.write(data, 0, len);
             }
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }finally {
             //	释放资源 分别关闭 先打开的后关闭

@@ -10,11 +10,11 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.filebackup.ui.LoginView"
             prefHeight="400.0" prefWidth="600.0">
-    <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:id="pathSelectLayout" >
-        <Label fx:id="modeLabel" text="init label"/>
-        <TextField fx:id="username"/>
-        <TextField fx:id="password"/>
-        <Button fx:id="action" onAction="#onAction" text="action"/>
+    <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:id="loginLayout" >
+        <Label fx:id="loginLabel" text="Log in"/>
+        <TextField fx:id="usernameInput"/>
+        <TextField fx:id="passwordInput"/>
+        <Button fx:id="login" onAction="#loginAction" text="action"/>
     </VBox>
 
 </AnchorPane>

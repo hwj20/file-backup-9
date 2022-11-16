@@ -3,11 +3,14 @@ package com.example.filebackup.utils;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import static com.example.filebackup.utils.huffman.HuffmanCode.decode;
+
 public class FileZipUtil {
-    public static void compressFile(String srcPath, String outPath) throws IOException {
+    public static void compressFile(String srcPath, String outPath) throws IOException, ClassNotFoundException {
         //读取源文件
         File srcFile = new File(srcPath);
         //判断输出路径是否正确
@@ -30,7 +33,6 @@ public class FileZipUtil {
         zipOutputStream.close();
         fileOutputStream.close();
     }
-
 
     private static void compressFile(File file, String fileName, final ZipOutputStream outputStream) throws IOException {
         //如果是目录
@@ -60,4 +62,36 @@ public class FileZipUtil {
             bufferedInputStream.close();
         }
     }
+
+//    private static void compressFile(File file, String fileName, final ZipOutputStream outputStream) throws IOException, ClassNotFoundException {
+//        //如果是目录
+//        if (file.isDirectory()) {
+//            //创建文件夹
+//            outputStream.putNextEntry(new ZipEntry(fileName+"/"));
+//            //迭代判断，并且加入对应文件路径
+//            File[] files = file.listFiles();
+//            for (File f : files) {
+//                compressFile(f, fileName + "/" + f.getName(), outputStream);
+//            }
+//        } else {
+//            //创建文件
+//            outputStream.putNextEntry(new ZipEntry(fileName));
+//            //读取文件并写出
+//            ObjectInputStream ois = null;
+//            FileInputStream  is = new FileInputStream(file);
+////            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+//            ois = new ObjectInputStream(is);
+//            byte[] huffmanBytes = (byte[])ois.readObject();
+//            Map<Byte, String> huffmanCodes = (Map)ois.readObject();
+//            byte[] bytes = decode(huffmanCodes, huffmanBytes);
+//            outputStream.write(bytes);
+////            int n;
+////            while ((n = bufferedInputStream.read(bytes)) != -1) {
+////                outputStream.write(bytes, 0, n);
+////            }
+//            //关闭流
+//            is.close();
+//            ois.close();
+//        }
+//    }
 }

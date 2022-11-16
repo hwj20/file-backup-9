@@ -12,10 +12,11 @@
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="Encrypt" onAction="#onEncryptButtonClick"/>
-    <Button text="Decrypt" onAction="#onDecryptButtonClick"/>
-    <Button text="Zip" onAction="#onZipButtonClick"/>
-    <Button text="Unzip" onAction="#onUnzipButtonClick"/>
-    <Button text="Copy" onAction="#onCopyButtonClick"/>
-    <Button text="Upload" onAction="#onUploadButtonClick"/>
+    <Button text="Store" onAction="#onStoreButtonClick" prefWidth="150"/>
+    <Button text="Restore" onAction="#onRestoreButtonClick" prefWidth="150"/>
+    <Button text="Encrypt" onAction="#onEncryptButtonClick" prefWidth="150"/>
+    <Button text="Decrypt" onAction="#onDecryptButtonClick" prefWidth="150"/>
+    <Button text="Zip" onAction="#onZipButtonClick" prefWidth="150"/>
+    <Button text="Unzip" onAction="#onUnzipButtonClick" prefWidth="150"/>
+    <Button text="Upload" onAction="#onUploadButtonClick" prefWidth="150"/>
 </VBox>
