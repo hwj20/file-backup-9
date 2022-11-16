@@ -39,6 +39,22 @@ public class MainController {
 		});
     }
 
+    public void openUploadSelectView() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-view.fxml"));
+        Parent root = fxmlLoader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root, 320, 400);
+        stage.setTitle("上传文件");
+        stage.setScene(scene);
+        stage.show();
+        stage.setOnCloseRequest((event) -> {
+            System.out.println("正在关闭当前的窗口..");
+            stage.close();
+        });
+    }
+
+
     @FXML
     protected void onEncryptButtonClick() throws IOException{
         openPathSelectView(Mode.ENCRYPT);
@@ -49,7 +65,7 @@ public class MainController {
     }
     @FXML
     protected void onUploadButtonClick() throws IOException {
-        openPathSelectView(Mode.UPLOAD);
+        openUploadSelectView();
     }
     @FXML
     protected void onZipButtonClick() throws IOException {
@@ -67,4 +83,5 @@ public class MainController {
     protected void onStoreButtonClick() throws IOException {
         openPathSelectView(Mode.STORE);
     }
+
 }

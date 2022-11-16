@@ -22,7 +22,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 /*
-TODO: 目录和文件混合打包，覆盖文件，网络
+TODO: 覆盖文件，网络
 TODO: 丑
  */
 public class PathSelectView {
@@ -133,6 +133,17 @@ public class PathSelectView {
         }
         showMessageDialog("copy finished", Alert.AlertType.INFORMATION);
     }
+    void uploadAction(Path srcFile, Path dstPath){
+        File file= new File(srcFile.toString().replace('\\','/'));
+        String key = showInputDialog("Enter the key");
+        try {
+            FileEncryptUtils.decrypt(file.toString(), dstPath.toString().replace('\\', '/') + '/' + file.getName().replace(".erp",""), key);
+        } catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("decrypt finished", Alert.AlertType.INFORMATION);
+    }
     void decryptAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));
         String key = showInputDialog("Enter the key");
@@ -231,7 +242,6 @@ public class PathSelectView {
             case STORE,RESTORE-> {copyAction(srcPath,dstPath);}
             case ENCRYPT -> {encryptAction(srcPath,dstPath);}
             case DECRYPT -> {decryptAction(srcPath,dstPath);}
-            case UPLOAD -> {}
         }
     }
 

@@ -78,9 +78,9 @@ public class UploadUtils {
                      * 获取响应码 200=成功 当响应成功，获取响应的流
                      */
                     int res = conn.getResponseCode();
-                    logger.warning( "response code:" + res);
+                    logger.info( "response code:" + res);
                     if(res==200) {
-                        logger.warning( "request success");
+                        logger.info( "request success");
                         InputStream input = conn.getInputStream();
                         StringBuilder sb1 = new StringBuilder();
                         int ss;
@@ -88,7 +88,7 @@ public class UploadUtils {
                             sb1.append((char) ss);
                         }
                         result = sb1.toString();
-                        logger.warning( "result : " + result);
+                        logger.info( "result : " + result);
                     }
                     else{
                         logger.warning( "request error");

@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="file-backup:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="basic function">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileCopyUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileZipUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UnZipUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/file_backup_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileEncryptUtilsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncrypyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncryptUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UploadUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/HuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/huffman/HuffmanCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/test_encrpy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/pathselect-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/pathselect-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +58,10 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "last_directory_selection": "D:/temp/file-backup/src/main/java/com/example/filebackup",
-    "last_opened_file_path": "D:/temp/file-copy-master"
+    "last_opened_file_path": "D:/temp/file-copy-master",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,7 +78,7 @@
       <recent name="com.example.filebackup.utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.file-backup.jar">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.filebackup.MainApplication" />
       <module name="file-backup" />
@@ -91,6 +86,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="file-backup.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/file_backup_jar/file-backup.jar" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\javafx\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="JAR Application.file-backup.jar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.file-backup.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668522208236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="basic function">
+      <created>1668575968575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668575968575</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,7 +149,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java</url>
-          <line>150</line>
+          <line>161</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -144,6 +161,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java</url>
           <line>95</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
