@@ -1,6 +1,7 @@
 package com.example.filebackup;
 
 import com.example.filebackup.ui.PathSelectView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ import java.io.IOException;
 
 
 public class MainController {
+
     public enum Mode{
         ENCRYPT,DECRYPT,STORE,RESTORE,ZIP,UNZIP,UPLOAD,VERIFY
     }
@@ -82,6 +84,10 @@ public class MainController {
     @FXML
     protected void onStoreButtonClick() throws IOException {
         openPathSelectView(Mode.STORE);
+    }
+    @FXML
+    protected void onVerifyButtonClick() throws IOException {
+        openPathSelectView(Mode.VERIFY);
     }
 
 }

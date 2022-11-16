@@ -9,17 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="basic function">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/file_backup_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileEncryptUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="add upload">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UploadUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +72,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.filebackup.utils" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.filebackup.utils" />
+    </key>
   </component>
   <component name="RunManager" selected="JAR Application.file-backup.jar">
     <configuration name="main" type="Application" factoryName="Application">
@@ -125,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668575968575</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add upload">
+      <created>1668580560276</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668580560276</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,19 +147,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="basic function" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic function" />
+    <MESSAGE value="add upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="add upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java</url>
-          <line>161</line>
+          <line>176</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java</url>
-          <line>124</line>
+          <line>139</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

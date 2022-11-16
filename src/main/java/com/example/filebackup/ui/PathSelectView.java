@@ -118,6 +118,21 @@ public class PathSelectView {
         td.showAndWait();
         return td.getEditor().getText().toString();
     }
+    void verifyAction(Path srcFile, Path dstPath) throws IOException {
+
+        VerifyUtils first=new VerifyUtils();
+        VerifyUtils second=new VerifyUtils();
+        String firstpath=srcFile.toString().replace('\\','/');
+        String secondpath=dstPath.toString().replace('\\','/');
+
+        first.search(firstpath,firstpath);
+        second.search(secondpath,secondpath);
+        if (first.map.equals(second.map)){
+            showMessageDialog("verify pass", Alert.AlertType.INFORMATION);
+        }else {
+            showMessageDialog("verify not pass", Alert.AlertType.INFORMATION);
+        }
+    }
     void copyAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));
         try {
@@ -242,6 +257,7 @@ public class PathSelectView {
             case STORE,RESTORE-> {copyAction(srcPath,dstPath);}
             case ENCRYPT -> {encryptAction(srcPath,dstPath);}
             case DECRYPT -> {decryptAction(srcPath,dstPath);}
+            case VERIFY -> {verifyAction(srcPath,dstPath);}
         }
     }
 
