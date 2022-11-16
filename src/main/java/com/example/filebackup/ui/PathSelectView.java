@@ -25,6 +25,10 @@ import java.util.Objects;
 TODO: 覆盖文件，网络
 TODO: 丑
  */
+
+/**
+ * 路径选择前端
+ */
 public class PathSelectView {
 
     public VBox pathSelectLayout;
@@ -38,6 +42,11 @@ public class PathSelectView {
     private boolean chooseSrcPath;
     private boolean chooseDstPath;
 
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     public File onPathSelect() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Choose File");
@@ -48,6 +57,11 @@ public class PathSelectView {
         }
         return null;
     }
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     public File onFileSelect() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose File");
@@ -59,6 +73,11 @@ public class PathSelectView {
         return null;
     }
 
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     public void initData(MainController.Mode m){
         mode = m;
         chooseSrcPath = false;
@@ -79,6 +98,11 @@ public class PathSelectView {
         modeLabel.setText(mode.name());
     }
 
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     @FXML
     protected void onSrcPathSelect() throws IOException {
         File file = null;
@@ -91,6 +115,11 @@ public class PathSelectView {
         String srcPath = file.getAbsolutePath();
         srcTextField.setText(srcPath);
     }
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     @FXML
     protected void onDstPathSelect() throws IOException {
         File file = null;
@@ -146,7 +175,7 @@ public class PathSelectView {
             showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
             return;
         }
-        showMessageDialog("copy finished", Alert.AlertType.INFORMATION);
+        showMessageDialog("Store/Restore finished", Alert.AlertType.INFORMATION);
     }
     void uploadAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));

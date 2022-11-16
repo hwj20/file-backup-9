@@ -11,7 +11,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-    <Label fx:id="loginLabel" text="Log in"/>
+    <Label fx:id="loginLabel" text="upload"/>
     <TextField fx:id="filepathSelect"/>
     <Button fx:id="fileChoose" onAction="#onFileSelect" text="选择文件"/>
     <Label  text="server ip"/>
