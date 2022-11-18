@@ -10,8 +10,8 @@ class FileEncryptUtilsTest {
 
     @Test
     public void encrypt() {
-        String srcFile = "D:\\code\\123.txt";
-        String dstFile = "D:\\code\\123\\123.txt";
+        String srcFile = "D:\\test_file\\123.txt";
+        String dstFile = "D:\\test_file\\";
         String key="awdqcf";
         try {
             FileEncryptUtils.encrypt(srcFile,dstFile,key);
@@ -22,8 +22,8 @@ class FileEncryptUtilsTest {
 
     @Test
     public void decrypt() {
-        String srcFile = "D:\\code\\123.txt.erp";
-        String dstFile = "D:\\code\\";
+        String srcFile = "D:\\test_file\\123.txt.erp";
+        String dstFile = "D:\\test_file\\";
         String key="awdqcf";
         try {
             FileEncryptUtils.decrypt(srcFile,dstFile,key);

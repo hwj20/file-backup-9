@@ -2,9 +2,17 @@ package com.example.filebackup.utils;
 
 import java.io.*;
 
+/**
+ * 文件复制操作utils
+ */
 public class FileCopyUtils {
-//    在复制目录的过程中判断源文件下所有文件对象是否为目录，是的话则利用递归调用自己复制目录
-//    如果是文件的话，则调用copyFile方法复制文件
+
+    /**
+     * 判断初始是文件还是目录，文件就复制文件，目录就递归调用复制目录
+     * @param srcPath 源地址
+     * @param dstPath 目标地址
+     * @throws IOException 文件操作错误
+     */
     public static void copy(String srcPath, String dstPath) throws IOException {
         try {
             File file=new File(srcPath);
@@ -14,7 +22,10 @@ public class FileCopyUtils {
             else {
                 File f=new File(dstPath);
                 if(!f.exists()){
-                    f.createNewFile();
+                     boolean res = f.createNewFile();
+                     if(!res){
+                         return;        // 文件创建不成功
+                     }
                 }
                 FileCopyUtils.copyFile(srcPath,dstPath);
             }
@@ -23,6 +34,12 @@ public class FileCopyUtils {
         }
     }
 
+    /**
+     * 复制地址
+     * @param srcPath 源地址
+     * @param destPath 目标地址
+     * @throws IOException 文件操作错误
+     */
     public static void copyDir(String srcPath,String destPath) throws IOException {
         File src = new File(srcPath);//源头
         File dest = new File(destPath);//目的地
@@ -51,7 +68,12 @@ public class FileCopyUtils {
     }
 
 
-    //    实现对文件的复制
+    /**
+     * 复制文件
+     * @param isFile 源文件
+     * @param osFile 目标文件
+     * @throws IOException 文件操作错误
+     */
     public static void copyFile(String isFile, String osFile) throws IOException {
         InputStream is = null;
         OutputStream os = null;

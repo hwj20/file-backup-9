@@ -20,4 +20,6 @@
     <Button text="Unzip" onAction="#onUnzipButtonClick" prefWidth="150"/>
     <Button text="Upload" onAction="#onUploadButtonClick" prefWidth="150"/>
     <Button text="Verify" onAction="#onVerifyButtonClick" prefWidth="150"/>
+    <Button text="SingleZip" onAction="#onSingleZipButtonClick" prefWidth="150"/>
+    <Button text="SingleUnZip" onAction="#onUnSingleUnzipButtonClick" prefWidth="150"/>
 </VBox>

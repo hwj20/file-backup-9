@@ -12,10 +12,18 @@ import java.nio.file.Path;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 文件加密攻击
+ */
 public class FileEncryptUtils {
-//    在复制目录的过程中判断源文件下所有文件对象是否为目录，是的话则利用递归调用自己复制目录
-//    如果是文件的话，则调用encrypt方法加密文件,加密是根据用户输入的数字，在每个字节上加上这个数字，实现加密
 
+    /**
+     * 判断是目录还是文件，文件就文件加密，目录就递归加密
+     * @param srcPath 源地址
+     * @param destPath 目的地址
+     * @param key 密钥
+     * @throws Exception 文件加密错误（比如文件读写出错）
+     */
     public static void search(String srcPath,String destPath,String key) throws Exception {
         File src = new File(srcPath);//源头
         File dest = new File(destPath);//目的地
@@ -44,7 +52,13 @@ public class FileEncryptUtils {
     }
 
 
-    //    实现对文件的复制
+    /**
+     *  文件加密
+     * @param isFile 源文件
+     * @param osFile 目标文件
+     * @param key 密钥
+     * @throws Exception 文件操作错误
+     */
     public static void encrypt(String isFile, String osFile, String key) throws Exception {
         File srcfile=new File(isFile);
         Path path=srcfile.toPath();
@@ -55,7 +69,14 @@ public class FileEncryptUtils {
 
     }
 
-    public static void decrypt(String isFile, String osFile, String key) throws IOException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
+    /**
+     * 文件解密
+     * @param isFile 源文件
+     * @param osFile 目标文件
+     * @param key 密钥
+     * @throws Exception 文件操作错误
+     */
+    public static void decrypt(String isFile, String osFile, String key) throws Exception{
         File srcfile=new File(isFile);
         Path path=srcfile.toPath();
         String s= Files.readString(path);

@@ -22,7 +22,7 @@ public class AESUtils {
     /**
      * 随机生成密钥
      *
-     * @return
+     * @return 返回随机密钥
      */
     public static String getAESRandomKey() {
         SecureRandom random = new SecureRandom();
@@ -55,9 +55,9 @@ public class AESUtils {
     /**
      * AES 解密操作
      *
-     * @param content
-     * @param key
-     * @return
+     * @param content 加密内容
+     * @param key 密钥
+     * @return 加密结果
      */
     public static String decrypt(String content, String key) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, IOException {
 
@@ -76,7 +76,7 @@ public class AESUtils {
     /**
      * 生成加密秘钥
      *
-     * @return
+     * @return  密钥生成
      */
     private static Key getSecretKey(final String key) {
         //返回生成指定算法密钥生成器的 KeyGenerator 对象
@@ -102,8 +102,8 @@ public class AESUtils {
     /**
      * 字节数组转Base64编码
      *
-     * @param bytes
-     * @return
+     * @param bytes 输入
+     * @return 输出base64编码值
      */
     public static String byte2Base64(byte[] bytes) {
         Base64.Encoder encoder = Base64.getEncoder();
@@ -113,9 +113,9 @@ public class AESUtils {
     /**
      * Base64编码转字节数组
      *
-     * @param base64Key
-     * @return
-     * @throws IOException
+     * @param base64Key 输入base64编码
+     * @return 输出解码后结果
+     * @throws IOException 解码出错
      */
     public static byte[] base642Byte(String base64Key) throws IOException {
         Base64.Decoder decoder = Base64.getDecoder();

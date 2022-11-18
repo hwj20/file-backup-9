@@ -9,31 +9,41 @@ import java.util.zip.ZipOutputStream;
 
 import static com.example.filebackup.utils.huffman.HuffmanCode.decode;
 
+/**
+ * 文件压缩
+ */
 public class FileZipUtil {
+    /**
+     *  压缩文件
+     * @param srcPath 源地址
+     * @param outPath 目标地址
+     * @throws IOException 文件读写错误
+     * @throws ClassNotFoundException 文件不存在错误
+     */
     public static void compressFile(String srcPath, String outPath) throws IOException, ClassNotFoundException {
-        //读取源文件
         File srcFile = new File(srcPath);
-        //判断输出路径是否正确
         File outFile = new File(outPath);
-        //如果只是路劲加入对应的压缩名称
         if (outFile.isDirectory()) {
-            //用"/"作文判断标准
             if (outPath.endsWith(File.separator)) {
                 outPath += srcFile.getName().split("\\.")[0] + ".zip";
             } else {
                 outPath += File.separator + srcFile.getName().split("\\.")[0] + ".zip";
             }
         }
-        //读取文件流
         FileOutputStream fileOutputStream = new FileOutputStream(outPath);
         ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
-        //压缩文件
         compressFile(srcFile, srcFile.getName(),zipOutputStream);
-        //关闭流
         zipOutputStream.close();
         fileOutputStream.close();
     }
 
+    /**
+     *
+     * @param file 文件
+     * @param fileName 文件名
+     * @param outputStream 输出流
+     * @throws IOException IO错误
+     */
     private static void compressFile(File file, String fileName, final ZipOutputStream outputStream) throws IOException {
         //如果是目录
         if (file.isDirectory()) {

@@ -4,15 +4,10 @@ import com.example.filebackup.MainController;
 import com.example.filebackup.utils.*;
 import com.example.filebackup.utils.huffman.HuffmanCode;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import org.testng.annotations.Factory;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,10 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-/*
-TODO: 覆盖文件，网络
-TODO: 丑
- */
+
 
 /**
  * 路径选择前端
@@ -44,8 +36,7 @@ public class PathSelectView {
 
     /**
      *
-     * @return
-     * @throws IOException
+     * @throws IOException 文件选择错误
      */
     public File onPathSelect() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -59,8 +50,7 @@ public class PathSelectView {
     }
     /**
      *
-     * @return
-     * @throws IOException
+     * @throws IOException 文件选择错误
      */
     public File onFileSelect() throws IOException {
         FileChooser fileChooser = new FileChooser();
@@ -74,9 +64,7 @@ public class PathSelectView {
     }
 
     /**
-     *
-     * @return
-     * @throws IOException
+     * @param m 该 PathSelectView 运行模式
      */
     public void initData(MainController.Mode m){
         mode = m;
@@ -85,12 +73,10 @@ public class PathSelectView {
         dstPathSelect.setText("目标目录选择");
         srcPathSelect.setText("源文件选择");
         if (mode == MainController.Mode.ZIP) {
-//        if (mode == MainController.Mode.ZIP || mode == MainController.Mode.STORE_RESTORE) {
             chooseSrcPath = true;
             srcPathSelect.setText("源目录选择");
         }
         if(mode == MainController.Mode.VERIFY || mode == MainController.Mode.RESTORE){
-//            if(mode == MainController.Mode.VERIFY){
             chooseDstPath = false;
             dstPathSelect.setText("目标文件选择");
 
@@ -99,9 +85,8 @@ public class PathSelectView {
     }
 
     /**
-     *
-     * @return
-     * @throws IOException
+     * 选择源地址
+     * @throws IOException 文件类型错误
      */
     @FXML
     protected void onSrcPathSelect() throws IOException {
@@ -116,9 +101,8 @@ public class PathSelectView {
         srcTextField.setText(srcPath);
     }
     /**
-     *
-     * @return
-     * @throws IOException
+     * 选择目标地址
+     * @throws IOException 文件类型错误
      */
     @FXML
     protected void onDstPathSelect() throws IOException {
@@ -133,6 +117,11 @@ public class PathSelectView {
         dstTextField.setText(dstPath);
     }
 
+    /**
+     * 显示Message对话框
+     * @param str 显示的文字
+     * @param alertType 警示(Message)类型
+     */
     void showMessageDialog(String str, Alert.AlertType alertType){
         Alert alert = new Alert(alertType);
         alert.setTitle("Information Dialog");
@@ -141,12 +130,24 @@ public class PathSelectView {
         alert.show();
     }
 
+    /**
+     * 显示输入对话框，用于输入密码等信息
+     * @param str 显示的文字
+     * @return 返回输入的值
+     */
     String showInputDialog(String str){
         TextInputDialog td = new TextInputDialog();
         td.setHeaderText(str);
         td.showAndWait();
         return td.getEditor().getText().toString();
     }
+
+    /**
+     *
+     * @param srcFile 源文件地址
+     * @param dstPath 目标文件地址
+     * @throws IOException 文件操作错误
+     */
     void verifyAction(Path srcFile, Path dstPath) throws IOException {
 
         VerifyUtils first=new VerifyUtils();
@@ -162,6 +163,13 @@ public class PathSelectView {
             showMessageDialog("verify not pass", Alert.AlertType.INFORMATION);
         }
     }
+
+
+    /**
+     *
+     * @param srcFile 源文件地址
+     * @param dstPath 目标文件地址
+     */
     void copyAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));
         try {
@@ -177,17 +185,13 @@ public class PathSelectView {
         }
         showMessageDialog("Store/Restore finished", Alert.AlertType.INFORMATION);
     }
-    void uploadAction(Path srcFile, Path dstPath){
-        File file= new File(srcFile.toString().replace('\\','/'));
-        String key = showInputDialog("Enter the key");
-        try {
-            FileEncryptUtils.decrypt(file.toString(), dstPath.toString().replace('\\', '/') + '/' + file.getName().replace(".erp",""), key);
-        } catch (Exception exception){
-            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
-            return;
-        }
-        showMessageDialog("decrypt finished", Alert.AlertType.INFORMATION);
-    }
+
+
+    /**
+     * 解密动作
+     * @param srcFile 源文件地址
+     * @param dstPath 目标文件地址
+     */
     void decryptAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));
         String key = showInputDialog("Enter the key");
@@ -199,6 +203,12 @@ public class PathSelectView {
         }
         showMessageDialog("decrypt finished", Alert.AlertType.INFORMATION);
     }
+
+    /**
+     * 加密动作
+     * @param srcFile 源文件地址
+     * @param dstPath 目标文件地址
+     */
     void encryptAction(Path srcFile, Path dstPath){
         File file= new File(srcFile.toString().replace('\\','/'));
         String key = showInputDialog("Enter the key");
@@ -210,6 +220,12 @@ public class PathSelectView {
         }
         showMessageDialog("encrypt finished", Alert.AlertType.INFORMATION);
     }
+
+    /**
+     * 解压动作
+     * @param srcFile 源文件地址
+     * @param dstPath 目标文件地址
+     */
     void unzipAction(Path srcFile, Path dstPath){
         File file = srcFile.toFile();
         String filename=file.getName();
@@ -231,6 +247,44 @@ public class PathSelectView {
             showMessageDialog("unzip finished", Alert.AlertType.INFORMATION);
         }
     }
+
+    /**
+     * 单个文件压缩动作
+     * @param srcPath 源文件地址
+     * @param dstPath 目标文件地址
+     */
+    void szipAction(Path srcPath, Path dstPath){
+        File file= new File(srcPath.toString().replace('\\','/'));
+        try {
+            HuffmanCode.zipFile(file.toString(),dstPath.toString().replace('\\','/')+'/'+file.getName()+".zip");
+        }catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("zip finished", Alert.AlertType.INFORMATION);
+    }
+
+    /**
+     * 单个文件解压动作
+     * @param srcPath 源文件地址
+     * @param dstPath 目标文件地址
+     */
+    void sunzipAction(Path srcPath, Path dstPath){
+        File file= new File(srcPath.toString().replace('\\','/'));
+        try {
+            HuffmanCode.unZipFile(file.toString(),dstPath.toString().replace('\\','/').replace(".zip",""));
+        }catch (Exception exception){
+            showMessageDialog(exception.toString(), Alert.AlertType.ERROR);
+            return;
+        }
+        showMessageDialog("zip finished", Alert.AlertType.INFORMATION);
+    }
+
+    /**
+     * 压缩动作
+     * @param srcPath 源文件地址
+     * @param dstPath 目标文件地址
+     */
     void zipAction(Path srcPath, Path dstPath){
         File file= new File(srcPath.toString().replace('\\','/'));
         try {
@@ -242,6 +296,10 @@ public class PathSelectView {
         showMessageDialog("zip finished", Alert.AlertType.INFORMATION);
     }
 
+    /**
+     * 按钮按下操作
+     * @throws IOException 文件操作错误
+     */
     @FXML
     protected void onAction() throws IOException {
         // check file available
@@ -287,6 +345,8 @@ public class PathSelectView {
             case ENCRYPT -> {encryptAction(srcPath,dstPath);}
             case DECRYPT -> {decryptAction(srcPath,dstPath);}
             case VERIFY -> {verifyAction(srcPath,dstPath);}
+            case S_ZIP -> {szipAction(srcPath,dstPath);}
+            case S_UNZIP ->{sunzipAction(srcPath,dstPath);}
         }
     }
 

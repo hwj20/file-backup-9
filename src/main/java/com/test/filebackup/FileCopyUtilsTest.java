@@ -1,11 +1,34 @@
 package com.test.filebackup;
 
+import com.example.filebackup.utils.FileCopyUtils;
 import org.junit.Test;
 
 
-class FileCopyUtilsTest {
+public class FileCopyUtilsTest {
 
+    String srcPath = "D:\\test_file\\origin";
+    String dstPath= "D:\\test_file\\dest";
     @Test
-    void copy() {
+    public void copy() {
+        try {
+            FileCopyUtils.copy(srcPath, dstPath);
+        }catch (Exception e){
+            e.printStackTrace();
+            assert false;
+        }
+        assert true;
+    }
+
+    /**
+     * 尝试错误的复制地址
+     */
+    @Test
+    public void copy_false() {
+        srcPath = "D:\\test_file\\origin_false_path";
+        try {
+            FileCopyUtils.copy(srcPath, dstPath);
+        }catch (Exception e){
+            assert true;
+        }
     }
 }

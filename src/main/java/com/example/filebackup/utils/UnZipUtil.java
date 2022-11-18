@@ -7,7 +7,16 @@ import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/**
+ * 解压工具
+ */
 public class UnZipUtil {
+    /**
+     * 解压操作
+     * @param zipFilePath 解压文件地址
+     * @param desDirectory 解压目标地址
+     * @throws Exception 创建文件夹出错，或者IO错误等
+     */
     public static void unzip(String zipFilePath, String desDirectory) throws Exception {
         File desDir = new File(desDirectory);
         if (!desDir.exists()) {
@@ -46,7 +55,11 @@ public class UnZipUtil {
         zipInputStream.close();
     }
 
-    // 如果父目录不存在则创建
+
+    /**
+     * 不存在则创建目录
+     * @param file 目录
+     */
     private static void mkdir(File file) {
         if (null == file || file.exists()) {
             return;

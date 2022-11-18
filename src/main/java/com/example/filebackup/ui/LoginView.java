@@ -15,6 +15,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
+/**
+ * 文件上传的login-view controller
+ * 本来想做注册功能，所以取这个名字
+ */
 public class LoginView {
     public Button login;
     public VBox loginLayout;
@@ -27,6 +31,11 @@ public class LoginView {
     private String clientKey;
 
 
+    /**
+     *
+     * @return 选择文件
+     * @throws IOException 文件选择错误
+     */
     public File onFileSelect() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose File");
@@ -37,6 +46,12 @@ public class LoginView {
         }
         return null;
     }
+
+    /**
+     *
+     * @param str 显示信息
+     * @param alertType 消息显示类别
+     */
     void showMessageDialog(String str, Alert.AlertType alertType){
         Alert alert = new Alert(alertType);
         alert.setTitle("Information Dialog");
@@ -45,6 +60,9 @@ public class LoginView {
         alert.show();
     }
 
+    /**
+     * 文件上传按钮动作
+     */
     @FXML
     protected void uploadAction(){
         if (filepathSelect.getText() == null || Objects.equals(filepathSelect.getText(), "")){
