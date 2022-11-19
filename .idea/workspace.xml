@@ -9,26 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="update ui">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/VerifyUtilsTest.java" afterDir="false" />
+    <list default="true" id="2b3e9bda-2e21-41c1-a8d8-f84e77debd58" name="Changes" comment="update note and test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/UploadUtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/ui/PathSelectView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/AESUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/AESUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileCopyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncryptUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileEncryptUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/FileZipUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UnZipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/UnZipUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/filebackup/utils/VerifyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileCopyUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileCopyUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileEncryptUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileEncryptUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileZipUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileZipUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UnZipUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UnZipUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UploadUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UploadUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filebackup/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/AESUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AESUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileCopyUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileCopyUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileEncryptUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileEncryptUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/FileZipUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileZipUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UnZipUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UnZipUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/UploadUtilsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filebackup/VerifyUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VerifyUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +71,11 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.filebackup.ui" />
+      <recent name="" />
+      <recent name="com.example.filebackup" />
+      <recent name="com.test" />
+      <recent name="com.example.filebackup.test" />
+      <recent name="com.exx" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.filebackup.utils" />
@@ -90,7 +84,7 @@
       <recent name="com.example.filebackup.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="JUnit.All in file-backup">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.filebackup.MainApplication" />
       <module name="file-backup" />
@@ -98,19 +92,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="file-backup.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/file_backup_jar/file-backup.jar" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\javafx\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2" />
+    <configuration name="All in file-backup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="file-backup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="file-backup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.main" />
-      <item itemvalue="JAR Application.file-backup.jar" />
+      <item itemvalue="JUnit.All in file-backup" />
+      <item itemvalue="TestNG.&lt;default&gt;" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.file-backup.jar" />
+        <item itemvalue="JUnit.All in file-backup" />
+        <item itemvalue="TestNG.&lt;default&gt;" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668584662195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update note and test">
+      <created>1668779307525</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668779307525</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,7 +193,8 @@
     <MESSAGE value="add upload" />
     <MESSAGE value="add verify" />
     <MESSAGE value="update ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ui" />
+    <MESSAGE value="update note and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="update note and test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

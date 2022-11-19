@@ -1,11 +1,7 @@
-package com.test.filebackup;
-
 import com.example.filebackup.utils.VerifyUtils;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 
 public class VerifyUtilsTest {

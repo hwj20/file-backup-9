@@ -1,5 +1,3 @@
-package com.test.filebackup;
-
 import com.example.filebackup.utils.FileCopyUtils;
 import org.junit.Test;
 
@@ -23,7 +21,7 @@ public class FileCopyUtilsTest {
      * 尝试错误的复制地址
      */
     @Test
-    public void copy_false() {
+    public void copyFalse() {
         srcPath = "D:\\test_file\\origin_false_path";
         try {
             FileCopyUtils.copy(srcPath, dstPath);

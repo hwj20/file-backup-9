@@ -1,9 +1,6 @@
-package com.test.filebackup;
-
 import com.example.filebackup.utils.FileZipUtil;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 
 

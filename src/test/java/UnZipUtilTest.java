@@ -1,5 +1,3 @@
-package com.test.filebackup;
-
 import com.example.filebackup.utils.UnZipUtil;
 import org.junit.Test;
 

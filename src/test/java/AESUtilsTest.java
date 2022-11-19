@@ -1,5 +1,3 @@
-package com.test.filebackup;
-
 import com.example.filebackup.utils.AESUtils;
 import org.junit.Test;
 
@@ -10,7 +8,7 @@ public class AESUtilsTest {
 
     String toTest = "to test";
     String key = "2132";
-    String encryptedRes = null;
+    private static String encryptedRes = null;
     @Test
     public void encrypt() {
         try {
@@ -27,10 +25,9 @@ public class AESUtilsTest {
         String origin = null;
         try{
             origin = AESUtils.decrypt(encryptedRes,key);
-
+            assert origin.equals(toTest);
         }catch (Exception exception){
             assert false;
         }
-        assert Objects.equals(toTest, origin);
     }
 }
