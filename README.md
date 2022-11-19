@@ -3,8 +3,6 @@ group assignment in UESTC in software developping course
 
 
 ## how to run
-### docker form
-
 
 ### run manually
 environment: java 17.0.5 javafx(19)
